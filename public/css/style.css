@@ -1,0 +1,87 @@
+@import url('sidebar.css');
+@import url('card.css');
+@import url('button.css');
+@import url('table.css');
+@import url('modal.css');
+
+:root {
+    --primary: #3c66e2;
+    --secondary: #f1f1f1;
+    --thirdary: #ffffff;
+    --delete: #e23c3c;
+    --shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+::-webkit-scrollbar{
+    display: none;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+
+.dashboard {
+    display: flex;
+    height: 100dvh;
+    background: var(--primary);
+}
+
+main {
+    flex: 1;
+    margin: 2rem;
+    border-radius: 18px;
+    color: var(--secondary);
+    overflow-y: auto;
+}
+
+.content {
+    display: flex;
+    justify-content: space-between;
+    background: var(--secondary);
+    color: var(--primary);
+    height: calc(100dvh - 25dvh);
+    gap: 2rem;
+    margin: 2rem 0;
+    padding: 16px;
+    border-radius: 24px;
+}
+
+.row {
+    display: flex;
+    gap: 1rem;
+}
+
+.left-panel {
+    flex: 1;
+    background: var(--thirdary);
+    border-radius: 16px;
+    padding: 1rem;
+    overflow-y: auto;
+}
+
+.right-panel {
+    background: var(--thirdary);
+    padding: 1rem;
+    border-radius: 16px;
+}
+
+.right-panel h2 {
+    margin-top: 2rem;
+    text-align: center;
+    border-bottom: 1px solid var(--secondary);
+    padding-bottom: 1rem;
+}
+
+.checkout-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.checkout-form, #nama_pelanggan, #checkout {
+    width: 100%;
+}

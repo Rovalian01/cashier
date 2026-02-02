@@ -1,0 +1,23 @@
+.submit {
+    border: none;
+    outline: none;
+    background: var(--primary);
+    color: var(--secondary);
+    width: 80%;
+    padding: 10px 14px;
+    border-radius: 14px;
+    margin-top: 2rem;
+}
+
+button {
+    cursor: pointer;
+}
+
+.add-to-invoice, .delete-from-invoice, #checkout {
+    border: none;
+    outline: none;
+    background: var(--primary);
+    color: var(--secondary);
+    padding: 8px;
+    border-radius: 5px;
+}

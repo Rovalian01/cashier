@@ -1,0 +1,51 @@
+aside {
+    width: 200px;
+    background: var(--secondary);
+    color: var(--primary);
+}
+
+aside h2 {
+    text-align: center;
+    border-bottom: 1px solid var(--primary);
+    margin-top: 2rem;
+    padding-bottom: 1rem;
+}
+
+/* NavBar */
+aside .menu {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+aside .menu a {
+    text-decoration: none;
+    display: block;
+    width: 180px;
+    color: var(--primary);
+    padding: 10px 14px;
+}
+
+.menu a.active {
+    background: var(--primary);
+    color: var(--secondary);
+    border-radius: 0 14px 14px 0;
+}
+
+.menu a:hover {
+    background: var(--primary);
+    color: var(--secondary);
+    border-radius: 0 14px 14px 0;
+}
+
+.logout {
+    text-decoration: none;
+    display: block;
+    width: 180px;
+    background: var(--delete);
+    color: var(--secondary);
+    padding: 10px 14px;
+    border-radius: 0 14px 14px 0;
+    margin-top: 1rem;
+}

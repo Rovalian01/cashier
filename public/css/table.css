@@ -1,0 +1,28 @@
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 15px;
+    overflow-y: auto;
+}
+
+table th {
+    background: #e5e7eb;
+    text-align: left;
+    padding: 12px;
+}
+
+table td {
+    padding: 12px;
+    border-bottom: 1px solid #e5e3eb;
+}
+
+table tr:hover {
+    background: #eaedf0;
+}
+
+.table-container {
+    margin-top: 2rem;
+    width: 100%;
+    max-width: 1200px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
