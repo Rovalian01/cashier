@@ -1,32 +1,13 @@
 <?php
 require_once __DIR__ . '/../../bootstrap/app.php';
 $products = $productController->showProduct();
-$productController->sendProduct();
-$productController->updateProduct($id);
-$productController->deleteProduct($id);
 ?>
 
 <main>
     <h1>Daftar Produk</h1>
 
-    <button onclick="openModal()">Tambah Barang</button>
-    
-    <!-- Modal -->
-    <div class="modal" id="modal">
-        <div class="modal-content">
-            <span onclick="closeModal()" class="close">&times;</span>
+    <a href="?page=create-product">Tambah Produk</a>
 
-            <h3>Tambah Produk</h3>
-            <form method="post">
-                <input type="text" name="nama_produk" placeholder="Nama Produk" required>
-                <input type="number" name="harga" placeholder="Harga" required>
-                <input type="number" name="stok" placeholder="Stok" required>
-                <button type="submit">Tambah Produk</button>
-            </form>
-        </div>
-    </div>
-
-    <!-- End Modal -->
     <div class="table-container">
         <table>
             <tr>
@@ -44,23 +25,11 @@ $productController->deleteProduct($id);
                 <td><?= $row['harga'] ?></td>
                 <td><?= $row['stok'] ?></td>
                 <td>
-                    <button onclick="openModal()">Edit</button>
-
-                    <!-- Modal -->
-                    <div class="modal" id="modal">
-                        <div class="modal-content">
-                            <span onclick="closeModal()" class="close">&times;</span>
-
-                            <h3>Edit Produk</h3>
-                            <form method="post">
-                                <input type="text" name="nama_produk" placeholder="Nama Produk"
-                                value="<?= $row['nama_produk'] ?>" required>
-                                <input type="number" name="harga" placeholder="Harga" value="<?= $row['harga'] ?>" required>
-                                <input type="number" name="stok" placeholder="Stok" value="<?= $row['stok'] ?>" required>
-                                <button type="submit">Edit Produk</button>
-                            </form>
-                        </div>
-                    </div>
+                    <?= ($row['id_kategori'] == 1 ) ? 'Makanan' : 'Minuman' ?>
+                </td>
+                <td>
+                    <a href="?page=update-product&id=<?= $row['id'] ?>">Edit</a>
+                    <a href="?page=delete-product&id=<?= $row['id'] ?>">Hapus</a>
                 </td>
             </tr>
             <?php endforeach; ?>

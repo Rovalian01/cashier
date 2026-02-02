@@ -3,7 +3,7 @@ require_once __DIR__ . '/../../bootstrap/app.php';
 $authController->login();
 ?>
 
-
+<link rel="stylesheet" href="css/auth.css">
 
 <main class="login-container">
     <form class="login" method="POST">

@@ -58,4 +58,39 @@ class Product {
         $stmt->execute();
         return $stmt;
     }
+
+    public function createProduct($nama_produk, $harga, $stok, $kategori)
+    {
+        $query = "INSERT INTO produks (nama_produk, harga, stok, id_kategori)
+                    VALUES (:nama_produk, :harga, :stok, :id_kategori)";
+        $stmt = $this->db->prepare($query);
+        $stmt->bindParam(':nama_produk', $nama_produk);
+        $stmt->bindParam(':harga', $harga);
+        $stmt->bindParam(':stok', $stok);
+        $stmt->bindParam(':id_kategori', $kategori);
+        $stmt->execute();
+        return $stmt;
+    }
+
+    public function updateProduct($nama_produk, $harga, $stok, $kategori, $id)
+    {
+        $query = "UPDATE produks SET nama_produk = :nama_produk, harga = :harga, stok = :stok, id_kategori = :id_kategori WHERE id = :id";
+        $stmt = $this->db->prepare($query);
+        $stmt->bindParam(':nama_produk', $nama_produk);
+        $stmt->bindParam(':harga', $harga);
+        $stmt->bindParam(':stok', $stok);
+        $stmt->bindParam(':id_kategori', $kategori);
+        $stmt->bindParam(':id', $id);
+        $stmt->execute();
+        return $stmt;
+    }
+
+    public function deleteProduct($id)
+    {
+        $query = "DELETE FROM produks WHERE id = :id";
+        $stmt = $this->db->prepare($query);
+        $stmt->bindParam(':id', $id);
+        $stmt->execute();
+        return $stmt;
+    }
 }

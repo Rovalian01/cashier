@@ -72,14 +72,14 @@ $dataProduk = $productController->showProductbyKategori();
                     </form>
 
                     <!-- Payment Section (hidden by default) -->
-                    <div id="payment-section" style="display:none;" class="payment-section">
+                    <div id="payment-section" class="payment-section">
                         <h3>Pembayaran</h3>
                         <div>
                             <label>Total: <span id="payment-total">0</span></label><br>
                             <input type="number" id="jumlah-pembayaran" placeholder="Jumlah Pembayaran" min="0">
                             <button type="button" id="payment-btn">Bayar</button>
                         </div>
-                        <div id="kembalian-display" style="display:none; margin-top:10px; padding:10px; background-color:#e8f5e9; border-radius:4px;">
+                        <div id="kembalian-display">
                             <p><strong>Kembalian: <span id="kembalian-amount">0</span></strong></p>
                         </div>
                     </div>
@@ -118,9 +118,6 @@ document.getElementById('checkout-form').addEventListener('submit', async (e) =>
 
         const data = await response.json();
         if (data.success) {
-            // Hide checkout form and show payment form
-            document.getElementById('checkout-form').style.display = 'none';
-            document.getElementById('payment-section').style.display = 'block';
             document.getElementById('payment-total').textContent = document.getElementById('total-amount').innerText.split(': ')[1];
             
             // Store invoice_id for payment
@@ -157,8 +154,6 @@ document.getElementById('payment-btn').addEventListener('click', async () => {
 
         const data = await response.json();
         if (data.success) {
-            // Hide payment section and show success message
-            document.getElementById('payment-section').style.display = 'none';
             document.getElementById('success-message').style.display = 'block';
             document.getElementById('success-invoice-id').textContent = data.invoice_id;
             document.getElementById('success-kembalian').textContent = 'Rp. ' + data.kembalian.toLocaleString('id-ID');

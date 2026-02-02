@@ -6,17 +6,7 @@ header('Content-Type: application/json');
 
 $id = $_POST['id'] ?? null;
 
-if (!$id) {
-    echo json_encode(['error' => 'ID tidak valid']);
-    exit;
-}
-
 $product = $productController->getProductById($id);
-
-if (!$product) {
-    echo json_encode(['error' => 'Produk tidak ditemukan']);
-    exit;
-}
 
 if (!isset($_SESSION['cart'])) {
     $_SESSION['cart'] = [];

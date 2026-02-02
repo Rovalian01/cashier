@@ -3,11 +3,15 @@ $page = $_GET['page'] ?? 'indexA';
 
 $allowed = [
     'indexA' => '../views/layout/dashboard.php',
+
+    //  Product
     'produk' => '../views/layout/produk.php',
+    'create-product' => '../views/layout/create-product.php',
+    'update-product' => '../views/layout/update-product.php',
+    'delete-product' => '../views/layout/delete-product.php',
+
     'riwayat' => '../views/layout/riwayat.php',
     'masukan' => '../views/layout/masukan.php',
-
-    'add_to_invoice' => '../views/layout/add_to_invoice.php',
 
     // Auth
     'login' => '../views/auth/login.php',

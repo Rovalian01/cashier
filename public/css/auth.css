@@ -1,0 +1,37 @@
+@import url('button.css');
+
+:root {
+    --primary: #3c66e2;
+    --secondary: #f1f1f1;
+    --thirdary: #ffffff;
+    --delete: #e23c3c;
+    --shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+* {
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+
+.login-container {
+    Display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 150px auto;;
+}
+
+.login {
+    Display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 20px;
+    border-radius: 30px;
+    background: var(--thirdary);
+    box-shadow: var(--shadow);
+}
+
+.login input {
+    width: 100%;
+}
+

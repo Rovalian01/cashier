@@ -34,4 +34,42 @@ class ProductController {
     {
         return $this->product->productById($id);
     }
+
+    public function createProduct()
+    {
+        if (isset($_POST['create-product'])) {
+            $nama_produk = $_POST['nama-produk'];
+            $harga = $_POST['harga'];
+            $stok = $_POST['stok'];
+            $kategori = $_POST['kategori'];
+
+            $this->product->createProduct($nama_produk, $harga, $stok, $kategori);
+
+            header('Location: ?page=produk');
+            exit();
+        }
+    }
+
+    public function updateProduct($id)
+    {
+        if (isset($_POST['update-product'])) {
+            $nama_produk = $_POST['nama-produk'];
+            $harga = $_POST['harga'];
+            $stok = $_POST['stok'];
+            $kategori = $_POST['kategori'];
+
+            $this->product->updateProduct($nama_produk, $harga, $stok, $kategori, $id);
+
+            header('Location: ?page=produk');
+            exit();
+        }
+    }
+
+    public function deleteProduct($id)
+    {
+        $this->product->deleteProduct($id);
+
+        header('Location: ?page=produk');
+        exit();
+    }
 }
